@@ -1,0 +1,23 @@
+{
+  "name": "assignment2webdev2021-2022",
+  "version": "1.0.0",
+  "description": "\"A server for the second assignment of the 'Technology and Applications on the Web' class 2021-2022\"",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anastasis575/Assignment2WebDev2021-2022.git"
+  },
+  "author": "\"Anastasios Paschalidis\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anastasis575/Assignment2WebDev2021-2022/issues"
+  },
+  "homepage": "https://github.com/Anastasis575/Assignment2WebDev2021-2022#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

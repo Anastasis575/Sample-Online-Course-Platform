@@ -12,19 +12,33 @@
     <header>
         <label for="SearchInput"></label><input type="text" name="Search" id="SearchInput">
         <button type="submit" id="search">Αναζήτηση</button>
+        <section id="MenuSpace">
+            <h2 title="To navigate">Menu</h2>
+            <ul id="Menu"></ul>
+            <script id="menu-template" type="text/x-handlebars-template">
+                <li>Introduction</li>
+                {{#each categories}}
+                    <li><a href={{link}}>{{title}}</a></li>
+                {{/each}}
+            </script>
+        </section>
     </header>
     <main>
         <h1>Αποτελέσματα αναζήτησης</h1>
         <hr>
-        <script id="lesson-template" type="text/">
-            {{if checked}}
-                
-
-
-
-
-            {{\if}}
+        <script id="lesson-template" type="text/x-handlebars-template">
+            {{#each classes}}
+                <section>
+                    <h1>{{title}} - ({{id}})</h1>
+                    <img src="{{img_dest}}" alt="{{img_alt}}">
+                    <section>
+                        <p>{{objectives}}</p>
+                        <p>{{description}}</p>
+                    </section>
+                </section>
+            {{/each}}
         </script>
+        <section id="Class-Data"></section>
     </main>
 </body>
 </html>

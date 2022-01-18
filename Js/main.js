@@ -1,6 +1,10 @@
 var url;
 
+// UC 1: Class Search
+
+
 window.onload=function () {
+    checkServer("http://localhost:8080/test/")
     url="https://elearning-aueb.herokuapp.com/";
     getInitial(url);
     document.getElementById("search").onclick=searchLesson;
@@ -85,9 +89,23 @@ function loadMenu(data) {
     sec.innerHTML=finall;
 }
 
+function checkServer(url) {
+    let h=new Headers();
+    let init={
+        method:"GET",
+        headers: h
+    }
+    console.log("Attempt to connect to server");
+    fetch(url,init)
+    .then(res=>res.json())
+    .then(obj=>{console.log(obj['debug']);})
+    .catch(err=>{console.log(err);})
+}
+
 // Event listener for Enter events
 window.addEventListener("keyup",event=>{
     if(event.key==="Enter"){
+        //If the search bar is focused
         if(document.getElementById("SearchInput")===document.activeElement){
             searchLesson();
         }

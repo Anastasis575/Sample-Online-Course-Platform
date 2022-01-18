@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Js/server.js"></script>
+    <title>User Register</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form id="userRegistration" onsubmit="return false">
+            <fieldset>
+                <legend>
+                    Προσωπικά Στοιχεία
+                </legend>
+                <label for="nameText">Όνομα: </label><input id="nameText" type="text" autocomplete="name" name="name" required>
+                <label for="surname">Επώνυμο: </label><input id="surname" type="text" autocomplete="family-name" name="surname" required>
+                <label for="phone">Τηλέφωνο: </label><input id="phone" type="tel" autocomplete="tel" name="phone" required>
+                <label for="edu">Μορφωτικό Επίπεδο: </label>
+                <select name="educationLevel" id="edu"  value="Διδάκτορας">
+                    <option name="Διδάκτορας">Διδάκτορας</option>
+                    <option name="Κάτοχος Μεταπτυχιακού">Κάτοχος Μεταπτυχιακού</option>
+                    <option name="Απόφοιτος/η ΑΕΙ">Απόφοιτος/η ΑΕΙ</option>
+                    <option name="Απόφοιτος/η Παραγωγικής Σχολής">Απόφοιτος/η Παραγωγικής Σχολής</option>
+                    <option name="Φοιτητής/τρια">Φοιτητής/τρια</option>
+                    <option name="Μαθητής">Μαθητής</option>
+                    <option name="Άλλο">Άλλο</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Στοιχεία Σύνδεσης
+                </legend>
+                <label for="mailText">Email: </label><input id="mailText" type="email" autocomplete="email" name="email" required>
+                <label for="password">Password: </label><input type="password" id="password" autocomplete="new-password" name="password"required>
+                <label for="rePassword">Επανατοποθετήστε Password: </label><input id="rePassword" autocomplete="new-password" type="password" required>
+            </fieldset>
+            <button type="submit" id="SubmitBtn">Υποβολή</button>
+        </form>
+        <p id="ReturnLink" hidden>Η εγγραφή σας ήταν επιτυχής. Μπορείτε να επιστρέψεται στην <a href="index.html">Αρχική Σελίδα</a>.</p>
+    </main>
+</body>
+</html>

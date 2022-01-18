@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="Js/profile.js"></script>
+    <title>Profile:</title>
+</head>
+<body>
+    <form id="loginForm" method="post">
+        <fieldset>
+            <h1>Σύνδεση</h1>
+            <label for="emailPrompt">Email</label><input id="emailPrompt" type="email" autocomplete="email" required>
+            <label for="passPrompt">Password</label><input id="passPrompt" type="password" required>
+        </fieldset>
+        <button id="loginB" type="submit">Σύνδεση</button>
+        <p>Δεν θέλετε να προχωρήσετε; Επιστέψτε στην <a href="index.html">Αρχική Σελίδα</a></p>
+    </form>
+
+    <main>
+        <section id="Prof"></section>
+        <script id="profile-template" type="text/x-handlebars-template">
+            <h1></h1>
+        </script>
+    </main>
+</body>
+</html>

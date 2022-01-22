@@ -1,0 +1,366 @@
+/* Variables defined to better change colour values */
+:root{
+    --color-White:#fff;
+    --link-color:#51423a;
+}
+/* The font that is used for the About us section */
+@font-face {
+    font-family: 'specialText';
+    src: url('../../Assets/OpenSans-Italic-VariableFont_wdth\,wght.ttf');
+    font-style: normal;
+    font-weight: 600;
+}
+
+img{
+    max-width: 100%;
+}
+/* General Rules*/
+/* All pages have a dark to light grey gradient background and all font-color should be initially black */
+body{
+    background-color: #c2cad0;
+    background-image: linear-gradient(#718391,#c2cad0);
+    color: black;
+    /* All of the pages have a shared grid display with four columns each */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* IDs */
+/* Positioning of elements in the index pages (images need to be left and Right of the text respectively ) */
+
+/* Paragraphs in the index page should not touch the images */
+
+#ContentTitle {
+    grid-column: span 4;
+    /* The title in each page should be centered */
+    display: flex;
+    justify-self: center;
+}
+
+/* Positioning of elements in the About Us page, images on the left side of the text and every entry is clearly one below the other*/
+#AboutUsInfo img {
+    float: left;
+}
+
+/* Search Data section */
+
+#Class-Data.CourseSource{
+    grid-column: span 4;
+}
+
+#Class-Data.CourseSource article{
+    grid-column: span 4;
+}
+
+
+
+
+/* The Thematic Unit */
+
+#MainContentMain {
+    grid-row: 2;
+    grid-column: span 4;
+}
+
+/* All emphatic text (titles/h2 and strong) needs to have a white-variant font */
+#MainContentMain h2, #MainContentMain strong {
+    color: var(--color-White);
+}
+
+#MainContentMain ul {
+    list-style: none;
+    margin-left: 2vw;
+    margin-right: 5vw;
+}
+
+#MainContentMain>section {
+    margin-top: 5vw;
+    /* The Thematic Unit sections take up all the columns aside to their main */
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#MainContentMain section  section{
+    grid-column: 3;
+}
+
+
+#MainContentMain section img {
+    float: left;
+    margin-right:5vw;
+}
+
+#Communications{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+#Communications form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#registerMain {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+#registerMain form{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#registerMain form fieldset {
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#registeMain form button {
+    font-size: 26px;
+    background-color: linear-gradient() ;
+}
+
+form#loginForm {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#Prof{
+    grid-column: span 4;
+}
+/* Header related CSS */
+
+/* Header Positioning */
+header {
+    /* All contents of the main, those being the section containing
+     * the logo and the title and the drop down menu are spaced in the center */
+    display: flex;
+    justify-content: space-around;
+    /* The header is always at the first row and takes up all the columns */
+    grid-row: 1;
+    grid-column: span 4;
+}
+
+/*  The Trademark includes the main Title and the logo positioning*/ 
+#TradeMark {
+    /* The contents are positioned in the center */
+    display: flex;
+    justify-content: space-around;
+}
+
+#TradeMark > img {
+    margin-top: 2em;
+}
+
+/* The Title position */
+#Title {
+    margin-left: 5vw;
+    font-size: 32px;
+    margin-top: 40px;
+}
+
+/* Menu Positioning */
+header nav > #MenuSpace {
+    margin-top: 2vw;
+    margin-right: 10vw;
+    float: right;
+    max-width:max-content;
+}
+
+/* Normal menu state (not visible) */
+header nav > #MenuSpace #Menu {
+    display: none;
+}
+
+/* Dropdown menu implementation (for when it is visible) */
+header nav > #MenuSpace:hover #Menu {
+    display: inline-block;
+    position: absolute;
+    background-color: #d84f4f;
+    margin-top: 0%;
+}
+
+/* Display for menu list items (visible)*/
+header nav > #MenuSpace:hover #Menu li {
+    list-style: none;
+    margin-left: -40px;
+    background-color: #d84f4f;
+}
+
+/* Options for selecting links in the menu */
+header nav > #MenuSpace:hover #Menu li:hover {
+    background-color: #c12b2b;
+    box-shadow: 2px 1px #000;
+    margin-bottom: 1px; 
+}
+
+/* Internal Menu styling */
+header nav > #MenuSpace:hover #Menu #MainCons li {
+    margin-left: -60px; 
+}
+
+/* Menu Title Styling and Positioning */
+header nav > #MenuSpace h2 {
+    background-color: #d84f4f;
+    box-shadow: 2px 1px #000;
+    margin-bottom: 0%;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    border-color: #000;
+}
+
+
+/* Main Content Styling Rules*/
+main{
+    font-size: 20px;
+    /* The main always takes up available by the body's grid columns */
+    grid-row: 2;
+    grid-column: span 4;
+    /* It defines a 3 column wide grid for the content */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 5px;
+}
+
+main hr {
+    clear: both;
+}
+
+
+/* Submit Button Font sizes */
+input[type="submit"]{
+    font-size: large;
+    color: #5a6974;
+}
+
+/* Form Styling */
+legend > h2 {
+    color: var(--color-White);
+}
+
+label {
+    color: var(--color-White);
+}
+
+/*Footer Related CSS*/
+footer {
+    height: 10vw;
+    clear: both;
+    /* The footer is always at the bottom and its contents are positioned at its edges */
+    grid-row: 3;
+    grid-column: span 4;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Footer Positioning and Styling  */
+footer > * {
+    margin-top: 20px;
+}
+
+footer > section {
+    margin-left: 80px;
+}
+footer nav {
+    margin-right: 40px;
+}
+
+/* Link same as .linkButton but it is specifically for each section link */
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #5e7e2a;
+    background-color: #92c244;
+    text-decoration: none;
+    box-shadow: 1px 2px #000;
+}
+/* Classes */
+/* Header and Footer background */
+.basicBackground {
+    background-color: #e7717d;
+    background-image: linear-gradient(to right,#e7717d,#92c244) ;
+    padding-bottom: 25px;
+}
+
+/* Strong Text center class */
+.centerIText {
+    text-align: center;
+}
+
+/* Strong text modifier to turn font color to white-variant */
+.MainTitle {
+    color: var(--color-White);
+}
+
+.MainTitle a {
+    color: var(--color-White);
+    text-decoration:none;
+}
+
+.MainTitle p a {
+    color:#e3e2e3;
+}
+
+.MainTitle i {
+    color:#000;
+    text-decoration: none;
+}
+.MainTitle p i {
+    color: var(--color-White);
+    text-decoration:none;
+} 
+
+/* Thematic Unit course Pages positions modifiers, put image on the left, add distance with text  */
+.CourseSource {
+    /* The mains defined by this class (the course description pages) are positioned
+     * in the second (main) row and take up only the 3 first columns in order to allow the nav to exist. */
+    grid-row: 2;
+    grid-column: span 4;
+    /* It defines a 4 column grid that takes at most 2 subjects */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px 10px;
+}
+
+.CourseSource section {
+    /* Each subject takes up 2 columns */
+    grid-column: span 2;
+}
+
+.CourseSource img {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 60px;
+}
+
+/* Style links with a link color and hover styling */
+.linkButton {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.linkButton:hover {
+    color: #5e7e2a;
+    background-color: #92c244;
+    text-decoration: none;
+    box-shadow: 1px 2px #000;
+}
+
+/* Strong Text styling */
+.StrongText strong, .StrongText h2, .StrongText h3{
+    color: var(--color-White);
+}
+
+.StrongText li {
+    list-style: none;
+}
+
+ul.noBullet li{
+    list-style: none;
+}

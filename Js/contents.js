@@ -16,8 +16,8 @@ function loadContent(q,url){
     fetch(url+`courses/search?category=${q["category"]}`,init)
     .then(res=>res.json())
     .then(obj=>{
-        document.getElementById("Class-Data");
         var data=[];
+        console.log(obj);
         obj.forEach(el=>{
             let o=el;
             o.img_dest=`https://elearning-aueb.herokuapp.com/static/images/${el.img}`;

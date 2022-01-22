@@ -10,6 +10,10 @@ function customSubmit(e){
     //The submit button was causing my page to refresh and would not finish its operations
     // e.preventDefault();
     if(!checkVal())return;
+    var ok=true;
+    ok=document.getElementById("userRegistration").checkValidity();
+    console.log(ok);
+    if(!ok)return;
     let form=document.getElementById("userRegistration");
     // console.log(form);
     let fdata=new FormData(form);
@@ -31,6 +35,8 @@ function customSubmit(e){
             let rtn=document.getElementById("ReturnLink");
             frm.style="display:none;"
             rtn.hidden=false;
+        }else if(res.status===409){
+            alert("User with this email address already exists.");
         }
     })
     .catch(err=>{console.log(err);});

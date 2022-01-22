@@ -7,42 +7,67 @@
     <title>Homepage</title>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="Js/main.js"></script>
+    <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
-    <header>
-        <label for="SearchInput"></label><input type="text" name="Search" id="SearchInput">
-        <button type="submit" id="search">Αναζήτηση</button>
-        <section id="MenuSpace">
-            <h2 title="To navigate">Menu</h2>
-            <ul id="Menu"></ul>
-            <script id="menu-template" type="text/x-handlebars-template">
-                <li>Introduction</li>
-                {{#each categories}}
+    <header class="basicBackground MainTitle">   
+        <!-- The section for the background for the Title and Logo -->
+        <section id="TradeMark">
+            <img src="Assets/Logo.png" alt="Website Logo">
+            <h1 id="Title"><strong>Stardust Studies</strong></h1>
+        </section>
+        <nav>
+            <section id="MenuSpace">
+                <h2 title="To navigate">Menu</h2>
+                <ul id="Menu"></ul>
+                <script id="menu-template" type="text/x-handlebars-template">
+                    <li>Introduction</li>
+                    {{#each categories}}
                     <li><a href={{link}}>{{title}}</a></li>
-                {{/each}}
-            </script>
-        </section>
-        <section>
-            <a href="profile.html">Σύνδεση</a>
-            <a href="register.html">Εγγραφή</a>
-        </section>
+                    {{/each}}
+                </script>
+            </section>
+        </nav>
     </header>
-    <main>
-        <h1>Αποτελέσματα αναζήτησης</h1>
-        <hr>
+    <main id="MainContentMain">  
+        <section>
+            <h1 id="ContentTitle">Αποτελέσματα αναζήτησης</h1>
+            <section>
+                <input type="text" name="Search" id="SearchInput">
+                <button type="submit" id="search">Αναζήτηση</button>
+            </section>
+            <section>
+                <a href="profile.html">Σύνδεση</a>
+                <a href="register.html">Εγγραφή</a>
+            </section>
+        </section>
         <script id="lesson-template" type="text/x-handlebars-template">
             {{#each classes}}
-                <section>
+                <article>
                     <h1>{{title}} - ({{id}})</h1>
                     <img src="{{img_dest}}" alt="{{img_alt}}">
                     <section>
                         <p>{{objectives}}</p>
                         <p>{{description}}</p>
                     </section>
-                </section>
+                </article>
             {{/each}}
         </script>
-        <section id="Class-Data"></section>
-    </main>
+        <section class="temp" id="Class-Data"></section>
+    </main>   
+    <footer class="basicBackground">
+        <section>
+            <p>To communicate with us please use any of the following:</p>
+            <p>
+                +30 694873589731 <br>
+                24210 63734 <br>
+                Startdust@gmail.com <br>
+            </p>
+        </section> 
+        <nav>
+            <section>To return to the main page you may press: <a href="index.html">Home</a> </section>
+            <section><p>If you want to enroll in the courses,<br><a href="">Follow this link.</a></p></section>
+        </nav>
+    </footer>
 </body>
 </html>

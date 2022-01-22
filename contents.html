@@ -6,26 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="Js/contents.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <title>Content Page</title>
 </head>
 <body>
-    <header>
-        <h1>CONTENT!!!!</h1>
+    <header class="basicBackground MainTitle">   
+        <!-- The section for the background for the Title and Logo -->
+        <section id="TradeMark">
+            <img src="Assets/Logo.png" alt="Website Logo">
+            <h1 id="Title"><strong>Stardust Studies</strong></h1>
+        </section>
     </header>
     <main>
+        <h1 id="ContentTitle">Category Results</h1>
         <script id="lesson-template" type="text/x-handlebars-template">
             {{#each classes}}
-                <section>
+                <article>
                     <h1>{{title}} - ({{id}})</h1>
                     <img src="{{img_dest}}" alt="{{img_alt}}">
                     <section>
                         <p>{{objectives}}</p>
                         <p>{{description}}</p>
                     </section>
-                </section>
+                </article>
             {{/each}}
         </script>
-        <section id="Class-Data"></section>
+        <section class="CourseSource" id="Class-Data"></section>
     </main>
+    <footer class="basicBackground">
+        <section>
+            <p>To communicate with us please use any of the following:</p>
+            <p>
+                +30 694873589731 <br>
+                24210 63734 <br>
+                Startdust@gmail.com <br>
+            </p>
+        </section> 
+        <nav>
+            <section>To return to the main page you may press: <a href="index.html">Home</a> </section>
+            <section><p>If you want to enroll in the courses,<br><a href="">Follow this link.</a></p></section>
+        </nav>
+    </footer>
 </body>
 </html>

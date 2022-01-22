@@ -13,6 +13,7 @@ function DAO(){
                 return usr;
             }
         } 
+        return null;
     };
     this.checkExistingUser=(email)=> {
         // Returns true if a user with the same emal address exist in the registered version
@@ -63,16 +64,40 @@ app.post("/user",(req,res)=>{
             userDAO.add(u);
             res.type("application/json").status(201).send(JSON.stringify({'debug':"Object created"}));
         }
-    }else i{
-        
+    }else{
+        res.status(406).send("Unacceptable data type");
     }
     // userDAO.printAll();
 });
 
-app.post("/login",(req,res)=>{
-    let cType=req.header("Content-type");
-    if (cType==="application/json"){
 
+app.post("/login",(req,res)=>{
+    console.log("Attempting login");
+    // let cType= req.header("Content-Type");
+    console.log(req.body);
+    let cred={email:req.body["email"],pass:req.body["password"]}
+    let usr=userDAO.lookup(cred.email);
+    if(usr===null){
+        res.status(404).send("No user with this email is found");
+    }else if(usr.pass===cred.pass){
+        res.status(200).send("User has been identified correctly");
+    }else{
+        res.status(400).send("Password was not Correct");
+    }
+})
+
+
+app.get("/login",(req,res)=>{
+    console.log("Succesfull reach of server");
+    let param=req.query.email;
+    console.log(param)
+    let usr= userDAO.lookup(param);
+    if(usr===null){
+        res.status(404).type("application/json").send({debug:"No user with that email"});
+    }
+    else{
+        console.log(usr);
+        res.status(200).type("application/json").send(usr);
     }
 })
 

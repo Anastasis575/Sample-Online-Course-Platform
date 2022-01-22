@@ -6,24 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="Js/profile.js"></script>
+    <link rel="stylesheet" href="CSS/main.css">
     <title>Profile:</title>
 </head>
 <body>
-    <form id="loginForm" method="post">
-        <fieldset>
-            <h1>Σύνδεση</h1>
-            <label for="emailPrompt">Email</label><input id="emailPrompt" type="email" autocomplete="email" required>
-            <label for="passPrompt">Password</label><input id="passPrompt" type="password" required>
-        </fieldset>
-        <button id="loginB" type="submit">Σύνδεση</button>
-        <p>Δεν θέλετε να προχωρήσετε; Επιστέψτε στην <a href="index.html">Αρχική Σελίδα</a></p>
-    </form>
-
+    <header class="basicBackground MainTitle">   
+        <!-- The section for the background for the Title and Logo -->
+        <section id="TradeMark">
+            <img src="Assets/Logo.png" alt="Website Logo">
+            <h1 id="Title"><strong>Stardust Studies</strong></h1>
+        </section>
+    </header>
+    
     <main>
+        <form id="loginForm" onsubmit="return false"> <!--action="/login" method="post"> -->
+            <fieldset>
+                <h1>Σύνδεση</h1>
+                <label for="emailPrompt">Email</label><input name="email" id="emailPrompt" type="email" autocomplete="email" required>
+                <label for="passPrompt">Password</label><input name="password" id="passPrompt" type="password" required>
+            </fieldset>
+            <button id="loginB" type="submit">Σύνδεση</button>
+        </form>
         <section id="Prof"></section>
         <script id="profile-template" type="text/x-handlebars-template">
-            <h1></h1>
+            <h1 id="centerIText">Προφίλ</h1>
+            <h2 class="centerIText">{{name}} {{surname}}</h2>
+            <section>
+                <ul class="noBullet">
+                    <h4>Πληροφορίες:</h4>
+                    <li>Όνομα: {{name}} {{surname}}</li>
+                    <li>Email: {{email}}</li>
+                    <li>Επίπεδο Μόρφωσης: {{educ}}</li>
+                </ul>  
+            </section>
         </script>
+        
     </main>
+    <footer class="basicBackground">
+        <section>
+            <p>To communicate with us please use any of the following:</p>
+            <pre>
+            +30 694873589731<br>
+            24210 63734<br>
+            StartdustStu@gmail.com<br>
+            </pre>
+        </section>
+        <nav>
+            <section>To return to the main page you may press: <a href="index.html"><img src="../Assets/Home.png"
+                        alt="Home"></a> </section>
+        </nav>
+    </footer>
 </body>
 </html>

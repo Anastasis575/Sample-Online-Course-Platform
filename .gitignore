@@ -1,1 +1,6 @@
 3190166.zip
+node_modules/
+.vscode/
+.test.txt.swp
+webdev-assignment-2 - 2021.22.pdf
+runServer.bat
